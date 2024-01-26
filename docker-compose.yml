@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  local_lambda:
+    image: truongnhan0311/ilogis:local-python-lambda-3.8
+    container_name: local_lambda
+    ports:
+      - 9000:8080
+    volumes:
+      - ./src:/var/task
+    restart: always
+    networks:
+      - host
+networks:
+  host:
