@@ -1,4 +1,6 @@
 test
+
+`
 curl --location --request POST 'http://localhost:9000/2015-03-31/functions/function/invocations' \
 --header 'X-Hook-Secret: NHAN SET' \
 --header 'X-Hook-Signature: 22222' \
@@ -9,5 +11,10 @@ curl --location --request POST 'http://localhost:9000/2015-03-31/functions/funct
 "process_type": "11111",
 "project_gid": "xxxxxx",
 "events": "1111",
-"message": "test"
+"message": "test",
+"function_name": "default"
 }'
+`
+
+
+pass event["function_name"] to call custom lambda handler
